@@ -12,7 +12,7 @@
     <h2>Arrays numéricos/indexados</h2>
 <?php
 // Sintaxe com colchetes
-$bandas = ["Savatage", "Rush", "Slayer"];
+$bandas = ["Savatage", "Rush", "Slayer", "Pink Floyd"];
 
 // Sintaxe com a função array()
 $cursos = array("HTML5", "Node.js", "PHP", "SQL");
