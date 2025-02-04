@@ -8,29 +8,36 @@
 <body>
     <h1>Trabalhando com objetos genéricos</h1>
     <hr>
-    <?php
-    /* Criando uma instância de uma classe genérica chamada stdClass (Standar Class)*/
-    $usuario = new stdClass(); // instância ou objeto  
+<?php
+/* Criando uma instância de uma classe genérica chamada stdClass (Standar Class)*/
+$usuario = new stdClass(); // instância ou objeto  
 
-    //Adicionando propriedades/atributos ao objeto
-    $usuario->nome = "Chapolin Colorado";
-    $usuario->idade = 25;
-    $usuario->email = "chapolin@gmail.com";
-    $usuario->telefones = ["11-2135-0000", "11-98888-7777"];
+//Adicionando propriedades/atributos ao objeto
+$usuario->nome = "Chapolin Colorado";
+$usuario->idade = 25;
+$usuario->email = "chapolin@gmail.com";
+$usuario->telefones = ["11-2135-0000", "11-98888-7777"];
 
-    echo $usuario->nome;
-    echo "<p><mark>$usuario->nome</mark></p>"; //interpolação
-    ?>
+echo $usuario->nome;
+echo "<p><mark>$usuario->nome</mark></p>"; //interpolação
+?>
 
-        <h2>Analisando a estrutura do objeto</h2>
-        <pre><?=var_dump($usuario)?></pre>
-        <hr>
+    <h2>Analisando a estrutura do objeto</h2>
+    <pre><?=var_dump($usuario)?></pre>
+    <hr>
 
-        <h2>Saída de Dados</h2>
-        <p>Nome: <?=$usuario->nome?></p>
-        <p>Idade: <?=$usuario->idade?> anos</p>
-        <p>Celular: <?=$usuario->telefones[1]?></p>
-        <hr>
+    <h2>Saída de Dados</h2>
+    <p>Nome: <?=$usuario->nome?></p>
+    <p>Idade: <?=$usuario->idade?> anos</p>
+    <p>Celular: <?=$usuario->telefones[1]?></p>
 
+    <hr>
+
+    <h2>Convertendo (fazendo um casting) um objeto em um aray associativo</h2>
+<?php $arrayUsuario = (array) $usuario; ?>
+
+    <h3>Analisando o array gerado a partir de um objeto</h3>
+    <pre><?=var_dump($arrayUsuario)?></pre>
+    
 </body>
 </html>
