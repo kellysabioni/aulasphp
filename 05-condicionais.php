@@ -9,9 +9,17 @@
     <h1>Estruturas condicionais</h1>
     <hr>
     
-    <h2>Simples</h2>
+    <h2>Simples usando <code>if</code></h2>
+<?php
+$numero = 10;
 
-    
+if($numero > 1){
+    echo "<p>$numero é maior que 1</p>";
+}
+
+//Sintaxe omitindo as chaves
+if($numero > 1) echo "<p>$numero é maior que 1</p>";
+?>
     <hr>
 
     <h2>Composta</h2>
