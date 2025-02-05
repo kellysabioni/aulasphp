@@ -11,11 +11,11 @@
 <?php
 $valorProduto = 5000;
 
-if ($valorProduto>=5000) {
+if ($valorProduto>5000) {
     $valorFinal = $valorProduto - ($valorProduto * 0.15);
-} elseif ($valorProduto>=3000) {
+} elseif ($valorProduto>3000) {
     $valorFinal = $valorProduto - ($valorProduto * 0.10);
-} elseif ($valorProduto>=1000) {
+} elseif ($valorProduto>1000) {
     $valorFinal = $valorProduto - ($valorProduto * 0.05);
 } else {
     $valorFinal = $valorProduto;
