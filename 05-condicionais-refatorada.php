@@ -34,45 +34,36 @@ $qtdCritica = 5; // mínimo necessário
 <h4>Quantidade em estoque: <?=$qtdEmEstoque?></h4>
 
 <?php
-if ($qtdEmEstoque < $qtdCritica) {
-?>
+if ($qtdEmEstoque < $qtdCritica) {?>
     <p class = "alerta-compra">É necessário comprar!</p>
-
 <?php
     // Condicional ANINHADA
-    if($qtdEmEstoque === 0){
-        ?>
+    if($qtdEmEstoque === 0):?>
         <p class = "alerta-compra"><strong> <mark>🚨URGENTE🚨</mark></strong></p>
-<?php    }
+<?php    
+ endif;
 } else {?>
     <p class = "normal" >Estoque normal</p>
 <?php
-};
-?>
+}?>
     <hr>
     <h2>Encadeada usando <code>if/elseif/else</code></h2>
     <!-- Verificar a idade de uma pessoa e determinar se é criança, adolescente, adulta ou idosa -->
 <?php
 $idade = 6;
-if ($idade<= 12) {
-?>
+if ($idade<= 12) {?>
     <p>Criança 👼</p>
 <?php
-} elseif ($idade <= 17) {
-?>
+} elseif ($idade <= 17) {?>
     <p>Adolescente 😒</p> 
 <?php
-} elseif ($idade <= 59) {
-?>
+} elseif ($idade <= 59) {?>
     <p>Adulto 🤯</p>
 <?php
-} else  {
-?>
+} else  {?>
     <p>Idoso 🧓</p>
 <?php
-};
-
-?>
+}?>
 
 </body>
 </html>
