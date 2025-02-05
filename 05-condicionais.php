@@ -46,7 +46,21 @@ if ($qtdEmEstoque < $qtdCritica) {
 }
 ?>
     <hr>
-    <h2>Encadeada</h2>
+    <h2>Encadeada usando <code>if/elseif/else</code></h2>
+    <!-- Verificar a idade de uma pessoa e determinar se é criança, adolescente, adulta ou idosa -->
+<?php
+$idade = 60;
+if ($idade<= 12) {
+    echo "<p>Criança 👼</p>";
+} elseif ($idade <= 17) {
+    echo "<p>Adolescente 😒</p>";
+} elseif ($idade <= 59) {
+    echo "<p>Adulto 🤯</p>";
+} else  {
+    echo "<p>Idoso 🧓</p>";
+};
+
+?>
 
 </body>
 </html>
