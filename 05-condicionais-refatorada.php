@@ -26,36 +26,50 @@ if($numero > 1){
     <h2>Composta</h2>
 <?php
 $produto = "Ultrabook Asus";
-$qtdEmEstoque = 0; // o que temos
+$qtdEmEstoque = 5; // o que temos
 $qtdCritica = 5; // mínimo necessário
+?>
 
-echo "<h3>$produto</h3>";
-echo "<h4>Quantidade em estoque: $qtdEmEstoque</h4>";
+<h3><?=$produto?></h3>
+<h4>Quantidade em estoque: <?=$qtdEmEstoque?></h4>
 
+<?php
 if ($qtdEmEstoque < $qtdCritica) {
-    echo '<p class = "alerta-compra">É necessário comprar!</p>';
+?>
+    <p class = "alerta-compra">É necessário comprar!</p>
 
+<?php
     // Condicional ANINHADA
     if($qtdEmEstoque === 0){
-        echo '<p class = "alerta-compra"><strong> <mark>🚨URGENTE🚨</mark></strong></p>';
-    }
-} else {
-    echo '<p class = "normal" >Estoque normal</p>';
-}
+        ?>
+        <p class = "alerta-compra"><strong> <mark>🚨URGENTE🚨</mark></strong></p>
+<?php    }
+} else {?>
+    <p class = "normal" >Estoque normal</p>
+<?php
+};
 ?>
     <hr>
     <h2>Encadeada usando <code>if/elseif/else</code></h2>
     <!-- Verificar a idade de uma pessoa e determinar se é criança, adolescente, adulta ou idosa -->
 <?php
-$idade = 60;
+$idade = 6;
 if ($idade<= 12) {
-    echo "<p>Criança 👼</p>";
+?>
+    <p>Criança 👼</p>
+<?php
 } elseif ($idade <= 17) {
-    echo "<p>Adolescente 😒</p>";
+?>
+    <p>Adolescente 😒</p> 
+<?php
 } elseif ($idade <= 59) {
-    echo "<p>Adulto 🤯</p>";
+?>
+    <p>Adulto 🤯</p>
+<?php
 } else  {
-    echo "<p>Idoso 🧓</p>";
+?>
+    <p>Idoso 🧓</p>
+<?php
 };
 
 ?>
