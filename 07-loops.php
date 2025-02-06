@@ -82,7 +82,44 @@ foreach ($alunos as $aluno) {
 <?php
 }
 ?>
+    
+    
+    <h3>Acessando array associativo</h3>
+    
+<?php 
+$clubes = [
+    "Corinthians" => "Timão",
+    "Palmeiras" => "Porco",
+    "São Paulo" => "Tricolor",
+    "Santos" => "Peixe"
+];
+
+foreach ($clubes as $clube => $apelido) {
+?>
+    <p>O clube <?=$clube?> é conhecido como <?=$apelido?></p>
+<?php
+}
+?>
 
     <hr>
+
+    <h3>Acessando objeto/instância</h3>
+<?php
+$livro = new stdClass();
+$livro->titulo = "Senhor dos Aneis: A Sociedade do Anel";
+$livro->autor = "J.R.R. Tolkien";
+$livro->ano = 1954;
+
+foreach ($livro as $propriedade => $valor) {
+?>    
+    <p><?=$propriedade?>: <b><?=$valor?></b></p>
+    
+<?php
+}
+?>
+    
+    
+    <hr>
+
 </body>
 </html>
