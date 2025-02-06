@@ -17,41 +17,50 @@ $media = 9.5;
 $faltas = 10;
 
 if ($media >= 7 && $faltas <= 10) {
-    echo "<p>Aprovado!</p>";
+?>
+    <p>Aprovado!</p>
+<?php
 } else {
-    echo "<p>Reprovado!</p>";    
+?>
+    <p>Reprovado!</p>    
+<?php
 }
 ?>
     <hr>
-
     <!-- o símbolo | é chamado de pipe -->
     <h2>|| (OU/OR)</h2>
     <p><i>Basta que apenas uma condição seja <b>VERDADEIRA/TRUE</b></i></p>
 <?php
 /* Dar um desconto a um cliente que seja VIP ou que tenha cupom */
-$clienteVIP = true; // valor/tipo lógico/boolean
-$temCupom = false;
+$clienteVIP = false; // valor/tipo lógico/boolean
+$temCupom = true;
 
 if ($clienteVIP || $temCupom) {
-    echo "<p>Desconto aplicado!</p>";
+?>
+    <p>Desconto aplicado!</p>
+<?php
 } else {
-    echo "<p>Sem desconto!</p>";    
+?>
+    <p>Sem desconto!</p>
+<?php
 }
-
 ?>
     
-    
+    <hr>  
     <h2>! (NÃO/NOT)</h2>
     <p><i>É uma inversão de lógica: <b>VERDADEIRO</b> vira <b>FALSO</b>, <b>FALSO</b> vira <b>VERDADEIRO</b></i></p>
 <?php
 /* Se o usuario NÃO ESTIVER logado, exibir o link/botão de login. Caso contrário, exibir uma saudação. */
-
-$usuarioLogado = true ;
+$usuarioLogado = false ;
 
 if (!$usuarioLogado) {
-    echo "<a href=\"login.php\">Login</a>";
+?>
+    <a href="login.php">Login</a>
+<?php
 } else{
-    echo "<span>Bem-vindo ao sistema!</span>";
+?>    
+    <span>Bem-vindo ao sistema!</span>
+<?php
 }
 ?>    
 
@@ -68,18 +77,20 @@ if (!$usuarioLogado) {
 */
 
 // Variáveis
-$idade = 16;
+$idade = 18;
 $acompanhadoDosPais = false;
 $estaBebado = false;
 
 if (($idade >= 18 || $acompanhadoDosPais) && !$estaBebado ) {
-    echo "<p>Entrada Permitida</p>";
-} else {
-    echo "<p>Entrada Negada</p>";
-}
-
 ?>
-
+    <p>Entrada Permitida</p>
+<?php
+} else {
+?>
+    <p>Entrada Negada</p>
+<?php
+}
+?>
 
 
 </body>
