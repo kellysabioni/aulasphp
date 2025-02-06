@@ -48,8 +48,41 @@ for ($i=1; $i <= 10; $i++) {
 <?php
 }
 ?>
+    <hr>
+    <h2>Mini-exercício</h2>
+    <p>Crie um array contendo os 12 meses do ano e usando um dos loops que vimos, mostre os nomes dos meses em uma lista ordenada HTML. </p>
+
+<?php
+$meses = array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
+?>
+    <ol>
+<?php
+for ($i=0; $i < 12 ; $i++) { 
+?>
+        <li><?=$meses[$i]?></li>
+<?php    
+}
+?>
+    </ol>
 
     <hr>
 
+    <h2>FOREACH (PARA CADA)</h2>
+    <p>Versão simplificada para o loop FOR e bem mais fácil de usar com arrays e objetos.</p>
+
+    <h3>Acessando array indexado/numerico</h3>
+<?php
+$alunos = ["Denis", "Paulo", "Heloisa"];
+//      nomeDoArray as nomeDeVariavelDeAcesso
+foreach ($alunos as $aluno) {
+    
+?>
+    <p>Nome: <?=$aluno?></p>
+
+<?php
+}
+?>
+
+    <hr>
 </body>
 </html>
