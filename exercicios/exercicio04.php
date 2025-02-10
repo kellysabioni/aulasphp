@@ -4,38 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 04</title>
-    <style>
-        body {font-family: Arial, sans-serif;}
-        table{
-            max-width: 70%;
-            width: 100%;
-            padding: 20px 0 40px;
-            border-collapse: collapse;
-            margin: 20px 0;
-            border-radius: 8px;
-            border: 2px solid darkblue;
-            box-sizing: border-box;
-        }
-        th{
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: whitesmoke;
-            margin: auto;
-            padding: 10px 15px;
-            background-color: #012a4a;
-        }
-        td {
-            border-top: 1px  solid darkblue;
-            padding: 10px 15px;
-        }
-
-        tr:nth-child(even){background-color:rgba(11, 171, 245, 0.51);}
-        .indice{text-align: center;}
-
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
 </head>
 <body>
-    <h1>Exercício 04 (Loop e Estrutura de Dados)</h1>    
+    <div class="container">
+        <h1>Exercício 04 (Loop e Estrutura de Dados)</h1>    
     <hr>
     <?php
 $i = 1000;    
@@ -48,10 +22,11 @@ $linguagens = array(
   "Go" => "Alta performance, concorrência"
 );
 ?>
-<table class="geral">
+
+<table class="table table-striped table-hover w-75 text-center">
     <thead>
         <tr>
-            <th class="indice">Indice</th>
+            <th>Indice</th>
             <th>Linguagem</th>
             <th>Descrição</th>
         </tr>
@@ -63,7 +38,7 @@ foreach ($linguagens as $linguagem => $descricao) {
     $i++;
 ?>
         <tr>
-            <td class="indice"><?=$i?></td>
+            <td><?=$i?></td>
             <td><?=$linguagem?></td>
             <td><?=$descricao?></td>
         </tr>
@@ -72,8 +47,10 @@ foreach ($linguagens as $linguagem => $descricao) {
 }
 ?>
     </tbody>
+
 </table>
-
-
+</div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
 </body>
 </html>
