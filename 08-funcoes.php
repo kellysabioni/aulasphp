@@ -98,7 +98,10 @@ if ($valor < 0) {
 ?>    
     <p>Número 10: <?=verificarNegativo(10)?></p>
     <p>Número -10: <span class="badge text-bg-danger"> <?=verificarNegativo(-10)?> </span></p>
-    <p>Teste de valor/parâmetro errado: <?=verificarNegativo("Paulo Henrique")?></p>
+    <!-- Código abaixo, gera um erro relacionado a indução de tipos (foi dado uma string e era esperado um número inteiro) -->
+    <!-- TIRE O COMENTÁRIO SE QUISER TESTAR -->
+
+    <!-- <p>Teste de valor/parâmetro errado: <?=verificarNegativo("")?></p> -->
 
 </div>
 
