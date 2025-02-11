@@ -139,6 +139,16 @@ $formatarPreco = function(float $valor): string{
     <p><?=$formatarPreco(10500.2598)?></p>
     <p><?=$formatarPreco(-1098)?></p>
 
+    <hr>
+    <h2>Arrow Function</h2>
+<?php
+$dobrarValor = fn(int $valor):int => $valor * 2;
+?>
+    <p> <?=$dobrarValor(10)?>.</p>
+    <p> <?=$dobrarValor(100)?>.</p>
+    <p> <?=$dobrarValor(150)?>.</p>
+    <p> <?=$dobrarValor(1904)?>.</p>
+
 </div>
 
 
