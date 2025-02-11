@@ -23,7 +23,72 @@ function exibirDadosDoAutor(){
 
 ?>    
     <h3>Chamada do procedimento</h3>
-    <?=exibirDadosDoAutor()?>
+    
+<?php
+$valor = 500;
+if ($valor >1000 ) {
+    exibirDadosDoAutor();
+} ?>
+
+    <hr>
+
+    <h3>Outras Chamadas</h3>
+    <div> <?=exibirDadosDoAutor()?>
+        <ul>
+            <li><?=exibirDadosDoAutor()?></li>
+            <li><b><?=exibirDadosDoAutor()?></b></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>Função com paramêtros (ou argumentos)</h2>
+<?php
+function somar($valor1, $valor2){
+    /* Variável de escopo local: 
+    Este tipo de variável existe somente dentro da função em que foi declarada*/ 
+    $total = $valor1 + $valor2;
+
+    /* Retornamos o resultado, ou seja, "mandamos para fora" da função o resultado que ela fez*/
+    return $total;
+
+    /*opção retornando resultado direto na expressão (sem uso de variável local)*/
+    //return $valor1 + $valor2;
+
+};
+?>
+
+    <p>Resultado 1: <?=somar(10, 5)?></p>
+    <p>Resultado 2: <?=somar(23, 107)?></p>
+
+<?php
+//Chamando a função e GUARDANDO o resultado numa variável GLOBAL
+$resultado3 = somar(1250, 788.85);
+?>
+    <p>Resultado 3: <?=$resultado3?></p>
+
+<?php if($resultado3 > 2000){ ?>
+    <p class = "alert alert-success"> O resultado 3 é maior que 2000</p>
+<?php 
+} else {?>
+    <p class = "alert alert-danger"> Resultado 3 não é maior que 2000</p>
+<?php
+
+}
+?>
+
+    <!--  Usando uma função como parte de uma condição:
+      PRIMEIRO: a função é chamada (aí ela calcula e retorna)
+      DEPOIS: o resultado que retornou é comparado com a condição  -->
+
+<?php if ( somar(10, 500) < 500) { ?>
+    <p>João Pedro REPROVADO</p>
+<?php    
+} else { ?>
+    <p>João Pedro APROVADO</p>
+<?php    
+}?>    
+
 </div>
 
 
