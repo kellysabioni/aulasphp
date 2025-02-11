@@ -144,10 +144,10 @@ $formatarPreco = function(float $valor): string{
 <?php
 $dobrarValor = fn(int $valor):int => $valor * 2;
 ?>
-    <p> <?=$dobrarValor(10)?>.</p>
-    <p> <?=$dobrarValor(100)?>.</p>
-    <p> <?=$dobrarValor(150)?>.</p>
-    <p> <?=$dobrarValor(1904)?>.</p>
+    <p> <?=$dobrarValor(10)?></p>
+    <p> <?=$dobrarValor(100)?></p>
+    <p> <?=$dobrarValor(150)?></p>
+    <p> <?=$dobrarValor(1904)?></p>
 
 </div>
 
