@@ -20,18 +20,14 @@ function exibirDadosDoAutor(){
     echo "<h4>Fulano de Tal - e tal </h4>";
     echo "<p><time>".date ("d/m/Y")."</time></p>";
 }
-
 ?>    
     <h3>Chamada do procedimento</h3>
-    
 <?php
 $valor = 500;
 if ($valor >1000 ) {
     exibirDadosDoAutor();
 } ?>
-
     <hr>
-
     <h3>Outras Chamadas</h3>
     <div> <?=exibirDadosDoAutor()?>
         <ul>
@@ -39,9 +35,7 @@ if ($valor >1000 ) {
             <li><b><?=exibirDadosDoAutor()?></b></li>
         </ul>
     </div>
-
     <hr>
-
     <h2>Função com paramêtros (ou argumentos)</h2>
 <?php
 function somar($valor1, $valor2){
@@ -54,33 +48,25 @@ function somar($valor1, $valor2){
 
     /*opção retornando resultado direto na expressão (sem uso de variável local)*/
     //return $valor1 + $valor2;
-
 };
 ?>
-
     <p>Resultado 1: <?=somar(10, 5)?></p>
     <p>Resultado 2: <?=somar(23, 107)?></p>
-
 <?php
 //Chamando a função e GUARDANDO o resultado numa variável GLOBAL
 $resultado3 = somar(1250, 788.85);
 ?>
     <p>Resultado 3: <?=$resultado3?></p>
-
 <?php if($resultado3 > 2000){ ?>
     <p class = "alert alert-success"> O resultado 3 é maior que 2000</p>
 <?php 
 } else {?>
     <p class = "alert alert-danger"> Resultado 3 não é maior que 2000</p>
 <?php
-
-}
-?>
-
+} ?>
     <!--  Usando uma função como parte de uma condição:
       PRIMEIRO: a função é chamada (aí ela calcula e retorna)
       DEPOIS: o resultado que retornou é comparado com a condição  -->
-
 <?php if ( somar(10, 500) < 500) { ?>
     <p>João Pedro REPROVADO</p>
 <?php    
@@ -98,7 +84,22 @@ function exibirSaudacao($mensagem, $pessoa = ""){
 ?>    
     <p>Mensagem 1: <?=exibirSaudacao("Bom dia", "João Pedro") ?></p>
     <p>Mensagem 2: <?=exibirSaudacao("Boa tarde") ?></p>
-    
+
+    <hr>
+    <h2>Indução de tipos de dados</h2>
+<?php
+function verificarNegativo ( int $valor ){
+if ($valor < 0) {
+    return "é negativo";
+} else {
+    return "não é negativo";
+}
+}
+?>    
+    <p>Número 10: <?=verificarNegativo(10)?></p>
+    <p>Número -10: <span class="badge text-bg-danger"> <?=verificarNegativo(-10)?> </span></p>
+    <p>Teste de valor/parâmetro errado: <?=verificarNegativo("Paulo Henrique")?></p>
+
 </div>
 
 
