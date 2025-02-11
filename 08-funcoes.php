@@ -88,13 +88,20 @@ function exibirSaudacao($mensagem, $pessoa = ""){
     <hr>
     <h2>Indução de tipos de dados</h2>
 <?php
-function verificarNegativo ( int $valor ){
-if ($valor < 0) {
-    return "é negativo";
-} else {
-    return "não é negativo";
+/* Indicando que o parâmetro DEVE ser do tipo inteiro e que o retorno da função DEVE ser do tipo string.*/
+function verificarNegativo ( int $valor ):string{
+    if ($valor < 0) {
+        return "é negativo";
+    } else {
+        return "não é negativo";
+    }
 }
-}
+/* Tipos comuns para uso com indução
+string  -> textos/caracteres em geral
+int     -> números inteiros
+float   -> números com casas decimais 
+array   -> vetor/matriz
+object  -> obejto */ 
 ?>    
     <p>Número 10: <?=verificarNegativo(10)?></p>
     <p>Número -10: <span class="badge text-bg-danger"> <?=verificarNegativo(-10)?> </span></p>
@@ -102,6 +109,8 @@ if ($valor < 0) {
     <!-- TIRE O COMENTÁRIO SE QUISER TESTAR -->
 
     <!-- <p>Teste de valor/parâmetro errado: <?=verificarNegativo("")?></p> -->
+
+    <hr>
 
 </div>
 
