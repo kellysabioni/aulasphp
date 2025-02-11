@@ -90,6 +90,7 @@ function exibirSaudacao($mensagem, $pessoa = ""){
 <?php
 /* Indicando que o parâmetro DEVE ser do tipo inteiro e que o retorno da função DEVE ser do tipo string.*/
 function verificarNegativo ( int $valor ):string{
+    /*  */
     //if ($valor < 0) {
     //    return "é negativo";
     //} else {
@@ -120,9 +121,9 @@ object  -> obejto */
     <p>Número 10: <?=verificarNegativo(10)?></p>
     <p>Número -10: <span class="badge text-bg-danger"> <?=verificarNegativo(-10)?> </span></p>
     <!-- Código abaixo, gera um erro relacionado a indução de tipos (foi dado uma string e era esperado um número inteiro) -->
-    <!-- TIRE O COMENTÁRIO SE QUISER TESTAR -->
+    <!-- TIRE O COMENTÁRIO SE QUISER TESTAR  -->
 
-    <!-- <p>Teste de valor/parâmetro errado: <?=verificarNegativo("")?></p> -->
+    <!-- <p>Teste de valor/parâmetro errado: <//?=verificarNegativo("")?></p> -->
 
     <hr>
 
