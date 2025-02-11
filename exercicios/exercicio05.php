@@ -13,11 +13,22 @@
     <h1>Exercício 05: FUNÇÕES</h1>
     <p></p>
 
+    <?php
+    $aluno = "Kelly"; 
+   
+    $calcularMediaDasNotas = function (float $nota1, float $nota2, float $nota3){
+        $mediaDasNotas = ($nota1 + $nota2+ $nota3) /3;
 
+        return $mediaDasNotas;
+    };
+  
+    ?>
+
+    <p>Média das notas do aluno <?= $aluno ?> foi: <?= $calcularMediaDasNotas ?></p>
     
 
 </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
