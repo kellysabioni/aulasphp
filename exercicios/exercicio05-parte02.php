@@ -18,12 +18,12 @@
     <?php
     $aluno = "Kelly";
   
-    $calcucularMediaDasNotas = function(float $nota1, float $nota2, float $nota3):float {
+    $calcularMediaDasNotas = function(float $nota1, float $nota2, float $nota3):float {
         return $mediaDasNotas = ($nota1 + $nota2 + $nota3) / 3;
     };
 
     /* Chamamos a função e PASSAMOS OS VALORES das variáveis para ela   */
-    $mediaFinal = number_format($calcucularMediaDasNotas(5,5,5), 1,",","." );
+    $mediaFinal = number_format($calcularMediaDasNotas(5,5,5), 1,",","." );
 
     function verificarSituacao ($mediaFinal):string {
         return $mediaFinal < 7 ? 

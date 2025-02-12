@@ -16,8 +16,9 @@
         <hr>
 
 <?php
-$alunos = [
-    [ "nome" => "Ana",
+$alunos = [ // ARRAY INDEXADO
+    [ // ARRAY ASSOCIATIVO
+      "nome" => "Ana",
       "nota1" => 10,
       "nota2" => 8,
       "nota3" => 7,    ],
@@ -39,8 +40,27 @@ $alunos = [
       "nota3" => 7,    ]
   ];
 
-foreach ($alunos as $aluno => $nome) {
-  echo $nome;
+  $calcularMediaDasNotas = function(float $nota1, float $nota2, float $nota3):float {
+    return $mediaDasNotas = ($nota1 + $nota2 + $nota3) / 3;
+};
+
+function verificarSituacao ($mediaFinal):string {
+    return $mediaFinal < 7 ? 
+    '<span class="alert alert-danger">Reprovado</s>' : 
+    '<span class="alert alert-info">Aprovado</span>'; 
+};
+
+foreach ($alunos as $aluno ) {
+  $media = $calcularMediaDasNotas($aluno["nota1"], $aluno["nota2"], $aluno["nota3"]);
+  $situacao = verificarSituacao($media);
+  ?>
+  <h2><?=$aluno["nome"]?></h2>
+  <p>Média: <b><?=  number_format($media , 1 )?></b></p>
+  <p>Situação do aluno: 
+    <?= $situacao?>
+  </p>
+
+<?php
 }
 
 ?>
