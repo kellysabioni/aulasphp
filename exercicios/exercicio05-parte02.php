@@ -19,23 +19,22 @@
     $aluno = "Kelly";
   
     $calcucularMediaDasNotas = function(float $nota1, float $nota2, float $nota3):float {
-
         return $mediaDasNotas = ($nota1 + $nota2 + $nota3) / 3;
-        
     };
 
+    /* Chamamos a função e PASSAMOS OS VALORES das variáveis para ela   */
     $mediaFinal = number_format($calcucularMediaDasNotas(5,5,5), 1,",","." );
 
-    function verificaSituacao ($mediaFinal){
+    function verificarSituacao ($mediaFinal):string {
         return $mediaFinal < 7 ? 
         '<span class="alert alert-danger">Reprovado</s>' : 
         '<span class="alert alert-info">Aprovado</span>'; 
     };
 
-    $situacao = verificaSituacao($mediaFinal);
+    $situacao = verificarSituacao($mediaFinal);
 ?>  
-    <h2>Resultado do Exercício</h2>
-    <p>A média das notas de <?=$aluno?> foi <?=$mediaFinal?>. E está <?=$situacao?>!!! </p>
+    <h2 class="mb-5">Resultado do Exercício</h2>
+    <p>A média das notas de <b><?=$aluno?></b> foi <?=$mediaFinal?>. E está <?=$situacao?>!!! </p>
     
     </div>
 
