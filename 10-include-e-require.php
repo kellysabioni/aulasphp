@@ -1,3 +1,4 @@
+<?php include "recursos.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -12,12 +14,25 @@
 
         <h1>Modularização e Inclusão de Recursos </h1>
         <hr>
+        <h2><?=ESCOLA?></h2>
+        <p>Estamos fazendo o curso de <?=$curso?></p>
         
+        <ul>
+            <?php foreach ($tecnologias as $tecnologia ) {?>
+                <li><?=$tecnologia?></li>
+            <?php } ?>
+        </ul>
 
+        <hr>
 
+        <p>O aluno Fulano de Tal tem 20 anos e é <?=verificarIdade(20)?> de idade </p>
 
+        <hr>
 
-        
+        <article>
+            <h2>Título qualquer...</h2>
+            <?php include "textos.html"; ?>
+        </article>
     
     </div>
 
