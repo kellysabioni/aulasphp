@@ -128,8 +128,18 @@ $valorQualquer = 1259.75;
     <p><code>max() </code>Maior valor: <?=max($valores )?></p>
     <p><code>round() </code>Arredondamento: <?=round($valorQualquer)?></p>
 
+    <h2>Filtros</h2>
+    <p>Recursos/FunçõesConstantes de análise e limpeza de dados aplicados através das funções <code>filter_var()</code> e <code>filter_input()</code></p>
 
+    <h3>Validação</h3>
+<?php
+// Exemplo de e-mail estruturado erroneamente
+$emailErrado = "tiago.com.br";
+$emailCorreto = "tiago@gmail.com";
+?>
 
+    <p class="alert alert-danger "><?=var_dump(filter_var($emailErrado, FILTER_VALIDATE_EMAIL))?></p>
+    <p class="alert alert-info "><?=var_dump(filter_var($emailCorreto, FILTER_VALIDATE_EMAIL))?></p>
 
     </div>    
 
