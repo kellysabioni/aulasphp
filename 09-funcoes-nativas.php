@@ -72,15 +72,31 @@ $aluno = [
     "idade" => 43 ,
 ];
 
-extract($aluno, EXTR_PREFIX_ALL, "chave"); 
+$nome = "Chaves";
+
+echo $nome;
+
+extract($aluno, EXTR_PREFIX_SAME, "chave"); 
 
 ?>
 
     <ul>
-        <li>ID: <?=$chave_id?></li>
+        <li>ID: <?=$id?></li>
         <li>Nome: <?=$chave_nome?></li>
-        <li>Idade: <?=$chave_idade?> anos</li>
+        <li>Idade: <?=$idade?> anos</li>
     </ul>
+
+    <hr>
+
+    <h3><code>array_sum()</code></h3>
+    <p>Somar valores de um array numérico</p>
+
+<?php
+$valores = [10, 20, 50, 1000, 500];
+$total = array_sum($valores);
+?>
+    <p>Soma dos valores do array: <b><?=$total?></b></p>
+    
 
     </div>    
 
