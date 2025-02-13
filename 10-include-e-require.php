@@ -31,8 +31,10 @@
 
         <article>
             <h2>Título qualquer...</h2>
-            <?php include "textos.html"; ?>
+            <?php include "textos.php"; ?>
         </article>
+
+
     
     </div>
 
