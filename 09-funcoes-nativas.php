@@ -24,16 +24,14 @@ $textoSemEspaco = trim($texto);
 
         <h3><code>str_replace()</code></h3>
         <p>Permite substituir partes de uma string</p>
-
-    <?php
-    $fraseFeia = "Esse Paulo é um bobão e xarope";
-    $fraseBunitinha = str_replace(
-        ["bobão", "xarope"],
-        ["🚫", "🔞"],
-        $fraseFeia
-    );
-    ?>
-        
+<?php
+$fraseFeia = "Esse Paulo é um bobão e xarope";
+$fraseBunitinha = str_replace(
+    ["bobão", "xarope"],
+    ["🚫", "🔞"],
+    $fraseFeia
+);
+?>
         <p><?=$fraseFeia?></p>
         <p><?=$fraseBunitinha?></p>
 
@@ -41,12 +39,11 @@ $textoSemEspaco = trim($texto);
 
         <h3><code>explode()</code></h3>
         <p>Transformar uma string em um array</p>
+<?php
+$textosLinguagens = "HTML,CSS,JS,PHP,SQL";
+$arrayLingugens = explode(",", $textosLinguagens);
 
-    <?php
-    $textosLinguagens = "HTML,CSS,JS,PHP,SQL";
-    $arrayLingugens = explode(",", $textosLinguagens);
-    
-    ?>
+?>
     <pre><?=var_dump($textosLinguagens)?></pre>
     <pre><?=var_dump($arrayLingugens)?></pre>
     
@@ -63,6 +60,27 @@ $textoBandas = implode(" - ", $arrayBandas);
     <pre><?=var_dump($arrayBandas)?></pre>
     <pre><?=var_dump($textoBandas)?></pre>
     
+    <hr>
+
+    <h3><code>extract()</code></h3>
+    <p>Extrai chaves associativas para variáveis</p>
+
+<?php
+$aluno = [
+    "id" => 1,
+    "nome" => "Kelly",
+    "idade" => 43 ,
+];
+
+extract($aluno, EXTR_PREFIX_ALL, "chave"); 
+
+?>
+
+    <ul>
+        <li>ID: <?=$chave_id?></li>
+        <li>Nome: <?=$chave_nome?></li>
+        <li>Idade: <?=$chave_idade?> anos</li>
+    </ul>
 
     </div>    
 
