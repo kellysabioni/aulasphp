@@ -39,7 +39,7 @@ $textoSemEspaco = trim($texto);
 
         <hr>
 
-        <h3><code>explode</code></h3>
+        <h3><code>explode()</code></h3>
         <p>Transformar uma string em um array</p>
 
     <?php
@@ -51,6 +51,18 @@ $textoSemEspaco = trim($texto);
     <pre><?=var_dump($arrayLingugens)?></pre>
     
     <hr>
+
+    <h2>Arrays</h2>
+    <h3><code>implode()</code></h3>
+
+<?php
+$arrayBandas = ["Rush", "Slayer","Dio"];
+$textoBandas = implode(" - ", $arrayBandas);
+
+?>
+    <pre><?=var_dump($arrayBandas)?></pre>
+    <pre><?=var_dump($textoBandas)?></pre>
+    
 
     </div>    
 
