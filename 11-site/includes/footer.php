@@ -2,11 +2,19 @@
         
         <footer>
             <p>Site criado para o curso Téc. Informática para Internet</p>
-    <?php 
-        date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário
-        // setlocale(LC_TIME, 'pt_BR.UTF-8');
-        $dataHoraAtual = Date('d/m/Y H:i:s'); // Armazena a data e hora atual em uma variável
-    ?>
+<?php
+// Definir o locale como 'pt_BR' (português do Brasil)
+setlocale(LC_TIME, 'pt_BR.UTF-8');
+
+// Criar um objeto DateTime
+$data = new DateTime();
+
+// Usar IntlDateFormatter para formatar a data por extenso
+$fmt = new IntlDateFormatter('pt_BR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+$dataHoraAtual = $fmt->format($data);
+
+?>
+   
     <p><span ><?=$dataHoraAtual; ?></span></p>
         </footer>
     </div>    
