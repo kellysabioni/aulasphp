@@ -4,9 +4,10 @@
             <p>Site criado para o curso Téc. Informática para Internet</p>
     <?php 
         date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário
-        $dataHoraAtual = date('d/m/Y H:i:s'); // Armazena a data e hora atual em uma variável
+        // setlocale(LC_TIME, 'pt_BR.UTF-8');
+        $dataHoraAtual = Date('d/M/Y H:i:s'); // Armazena a data e hora atual em uma variável
     ?>
-    <p>A data e hora atual é: <span><?=$dataHoraAtual; ?></span></p>
+    <p><span ><?=$dataHoraAtual; ?></span></p>
         </footer>
     </div>    
 

@@ -14,6 +14,7 @@
                 <a href="index.php">Home</a>
                 <a href="cursos.php">Treinamentos</a>
                 <a href="duvidas.php">Dúvidas</a>
+                <a href="contatos.php">Contatos</a>
             </nav>
         </header>
 
