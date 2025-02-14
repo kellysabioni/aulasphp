@@ -1,11 +1,14 @@
 <?php include "includes/cabecalho.php" ?>
-
+    
+    <h2>Página de contatos</h2>
+    <p>Entre em contato conosco</p>
+        
         <div class="card">
             <div class="card-header bg-primary text-white">
                 <h4 class="mb-0">Formulário de Contato</h4>
             </div>
             <div class="card-body">
-                <form>
+                <form action="">
                     <div class="form-group">
                         <label for="nome">Nome</label>
                         <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>

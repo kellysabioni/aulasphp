@@ -5,7 +5,7 @@
     <?php 
         date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário
         // setlocale(LC_TIME, 'pt_BR.UTF-8');
-        $dataHoraAtual = Date('d/M/Y H:i:s'); // Armazena a data e hora atual em uma variável
+        $dataHoraAtual = Date('d/m/Y H:i:s'); // Armazena a data e hora atual em uma variável
     ?>
     <p><span ><?=$dataHoraAtual; ?></span></p>
         </footer>
