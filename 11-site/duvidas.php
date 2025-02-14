@@ -1,4 +1,4 @@
-<?php include "cabecalho.php" ?>
+<?php include "includes/cabecalho.php" ?>
 
             <h2>Página de dúvidas</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati impedit quam, dicta, laudantium et culpa, molestias sint repellendus quibusdam ex vitae. Maxime mollitia et omnis nulla explicabo? Fuga excepturi sunt beatae adipisci maxime dicta voluptas veritatis provident ex in reiciendis quis nam non explicabo ab, natus eveniet. Id, odio ut?</p>
@@ -14,4 +14,4 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam corporis cumque dolor, libero necessitatibus quos perspiciatis animi error amet optio?</p>
             </details>
 
-<?php include "footer.php" ?>
+<?php include "includes/footer.php" ?>
