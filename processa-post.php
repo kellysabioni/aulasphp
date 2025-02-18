@@ -17,6 +17,10 @@
     $email = $_POST["email"];
     $idade = $_POST["idade"];
     $mensagem = $_POST["mensagem"];
+
+    //Capturando os options 
+    $interesses = $_POST["interesses"];
+
     ?>
  
     <!-- Exibindo dados -->
@@ -25,6 +29,20 @@
       <li class="list-group-item list-group-item-action">Nome: <?= $nome ?></li>
       <li class="list-group-item list-group-item-action">Email: <?= $email ?></li>
       <li class="list-group-item list-group-item-action">Idade: <?= $idade ?></li>
+
+      <li class="list-group-item list-group-item-action">Interesses usando <code>implode() </code> : <?= implode(", " , $interesses) ?></li>
+
+      <li class="list-group-item list-group-item-action">Interesses usando <code>foreach() </code> :
+        <ul>
+            <?php foreach ($interesses as $interesse ) {?>
+                <li><?=$interesse?></li>
+            <?php    
+            }
+            ?>
+        </ul>
+    
+      </li>
+      
       <li class="list-group-item list-group-item-action">Mensagem: <?= $mensagem ?></li>
     </ul>
   </div>
