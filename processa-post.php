@@ -15,7 +15,6 @@
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $idade = $_POST["idade"];
-    $mensagem = $_POST["mensagem"];
     
     //Capturando os options 
     //Solução 1: aplicar um if/else ternário checando se existe algum interesse
@@ -23,8 +22,9 @@
     
     //Solução 2: usar o operador de coalescência nula ??
     $interesses = $_POST["interesses"] ?? [];
-
     $informativos = $_POST["informativos"];
+    
+    $mensagem = $_POST["mensagem"];
     ?>
  
     <!-- Exibindo dados -->
@@ -45,8 +45,8 @@
         </li>
     <?php } ?>  
         
+    <li class="list-group-item list-group-item-action">Deseja receber informativos? <?= $informativos ?></li>
         <li class="list-group-item list-group-item-action">Mensagem: <?= $mensagem ?></li>
-        <li class="list-group-item list-group-item-action">Deseja receber informativos? <?= $informativos ?></li>
     </ul>
   </div>
  
