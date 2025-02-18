@@ -11,43 +11,59 @@
     <h1 class="text-center">Trabalhando com o POST</h1>
     <hr>
     <?php
-    //capturando dados
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $idade = $_POST["idade"];
-    
-    //Capturando os options 
-    //Solução 1: aplicar um if/else ternário checando se existe algum interesse
-    /* $interesses = isset($_POST["interesses"] ) ? $_POST["interesses"]:[]; */
-    
-    //Solução 2: usar o operador de coalescência nula ??
-    $interesses = $_POST["interesses"] ?? [];
-    $informativos = $_POST["informativos"];
-    
-    $mensagem = $_POST["mensagem"];
-    ?>
- 
-    <!-- Exibindo dados -->
-    <h2 class="text-center">Informações do usuário: </h2>
-    <ul class="list-group w-50">
-        <li class="list-group-item list-group-item-action">Nome: <?= $nome ?></li>
-        <li class="list-group-item list-group-item-action">Email: <?= $email ?></li>
-        <li class="list-group-item list-group-item-action">Idade: <?= $idade ?></li>
+    if (empty ( $_POST["nome"]) || empty($_POST["email"])) {
+        if (empty ( $_POST["nome"]) && empty($_POST["email"])) {
+            $alerta = "Nome e E-mail"; 
+            } elseif (empty ( $_POST["nome"])) {
+                 $alerta = "Nome"; 
+                 } else {
+                    $alerta =  "E-mail";
+                    }?>
+                    <p class="alert alert-danger ">Por favor, preencha <strong> <?= $alerta ?> </strong></p>
+        <?php                   
+        } else{
 
-    <?php
-    if ( !empty($interesses)) { ?>
-        <li class="list-group-item list-group-item-action">Interesses usando <code>implode() </code> : <?= implode(", " , $interesses) ?></li>
+            //capturando dados
+            $nome = $_POST["nome"];
+            $email = $_POST["email"];
+            $idade = $_POST["idade"];
+            
+            //Capturando os options 
+            //Solução 1: aplicar um if/else ternário checando se existe algum interesse
+            /* $interesses = isset($_POST["interesses"] ) ? $_POST["interesses"]:[]; */
+            
+            //Solução 2: usar o operador de coalescência nula ??
+            $interesses = $_POST["interesses"] ?? [];
+            $informativos = $_POST["informativos"] ?? [];
+            $mensagem = $_POST["mensagem"];
+            ?>
+            
+            <!-- Exibindo dados -->
+            <h2 class="text-center">Informações do usuário: </h2>
+            <ul class="list-group w-50">
+                <li class="list-group-item list-group-item-action">Nome: <?= $nome ?></li>
+                <li class="list-group-item list-group-item-action">Email: <?= $email ?></li>
+                <li class="list-group-item list-group-item-action">Idade: <?= $idade ?></li>
 
-        <li class="list-group-item list-group-item-action">Interesses usando <code>foreach() </code> :
-            <ul>
-                <?php foreach ($interesses as $interesse ) {?><li><?=$interesse?></li><?php } ?>
+            <?php
+            if ( !empty($interesses)) { ?>
+                <li class="list-group-item list-group-item-action">Interesses usando <code>implode() </code> : <?= implode(", " , $interesses) ?></li>
+
+                <li class="list-group-item list-group-item-action">Interesses usando <code>foreach() </code> :
+                    <ul>
+                        <?php foreach ($interesses as $interesse ) {?><li><?=$interesse?></li><?php } ?>
+                    </ul>
+                </li>
+            <?php 
+            } ?>  
+                
+            <li class="list-group-item list-group-item-action">Deseja receber informativos? <?= $informativos ?></li>
+                <li class="list-group-item list-group-item-action">Mensagem: <?= $mensagem ?></li>
             </ul>
-        </li>
-    <?php } ?>  
-        
-    <li class="list-group-item list-group-item-action">Deseja receber informativos? <?= $informativos ?></li>
-        <li class="list-group-item list-group-item-action">Mensagem: <?= $mensagem ?></li>
-    </ul>
+
+        <?php 
+    } ?>
+ 
   </div>
  
  
