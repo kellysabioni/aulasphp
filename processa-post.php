@@ -24,18 +24,18 @@
         } else{
 
             //capturando dados
-            $nome = $_POST["nome"];
-            $email = $_POST["email"];
-            $idade = $_POST["idade"];
+            $nome = filter_input(INPUT_POST,"nome", FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL);
+            $idade = filter_input(INPUT_POST, "idade", FILTER_SANITIZE_NUMBER_INT);
             
             //Capturando os options 
             //Solução 1: aplicar um if/else ternário checando se existe algum interesse
             /* $interesses = isset($_POST["interesses"] ) ? $_POST["interesses"]:[]; */
             
             //Solução 2: usar o operador de coalescência nula ??
-            $interesses = $_POST["interesses"] ?? [];
-            $informativos = $_POST["informativos"] ?? [];
-            $mensagem = $_POST["mensagem"];
+            $interesses = filter_var_array($_POST["interesses"] ?? [],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $informativos = filter_var_array($_POST["informativos"] ?? [], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $mensagem = filter_input(INPUT_POST,"mensagem", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             ?>
             
             <!-- Exibindo dados -->
