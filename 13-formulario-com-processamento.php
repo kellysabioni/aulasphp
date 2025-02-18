@@ -10,20 +10,35 @@
 
     <div class="container">
 
-        <h1>Formulario e processamento combinado</h1>
-        <hr>
+<?php
+/* Detectando quando o formulario é acionado */
+if (isset($_POST['enviar'])) {
+        $nome = filter_input(INPUT_POST,"nome", FILTER_SANITIZE_FULL_SPECIAL_CHARS) ;
+        $email= filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL) ;
+    ?>    
+        <section>
+            <h2>Dados</h2>
+            <p>Nome: <?=$nome ?></p>
+            <p>E-mail: <?=$email ?></p>
+        </section>
+    <?php
+    } else { ?> 
+            <h1>Formulario e processamento combinado</h1>
+            <hr>
 
-        <form action="" method="post">
-            <div class="mb-3">
-                <label for="nome">Nome: </label>
-                <input type="text" class="form-control" name="nome" id="nome">
-                
-                <label for="email">E-mail: </label>
-                <input type="text" class="form-control" name="email" id="email">
-            </div>
-            <button type="submit" class="btn btn-primary" name="enviar">Enviar</button>
-        </form>
-    
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="nome">Nome: </label>
+                    <input type="text" class="form-control" name="nome" id="nome">
+                    
+                    <label for="email">E-mail: </label>
+                    <input type="text" class="form-control" name="email" id="email">
+                </div>
+                <button type="submit" class="btn btn-primary" name="enviar">Enviar</button>
+            </form>
+        <?php        
+        }
+        ?>    
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
