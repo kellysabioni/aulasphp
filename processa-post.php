@@ -11,44 +11,42 @@
     <h1 class="text-center">Trabalhando com o POST</h1>
     <hr>
     <?php
- 
     //capturando dados
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $idade = $_POST["idade"];
     $mensagem = $_POST["mensagem"];
-
+    
     //Capturando os options 
-
     //Solução 1: aplicar um if/else ternário checando se existe algum interesse
     /* $interesses = isset($_POST["interesses"] ) ? $_POST["interesses"]:[]; */
     
     //Solução 2: usar o operador de coalescência nula ??
     $interesses = $_POST["interesses"] ?? [];
 
+    $informativos = $_POST["informativos"];
     ?>
  
     <!-- Exibindo dados -->
     <h2 class="text-center">Informações do usuário: </h2>
     <ul class="list-group w-50">
-      <li class="list-group-item list-group-item-action">Nome: <?= $nome ?></li>
-      <li class="list-group-item list-group-item-action">Email: <?= $email ?></li>
-      <li class="list-group-item list-group-item-action">Idade: <?= $idade ?></li>
+        <li class="list-group-item list-group-item-action">Nome: <?= $nome ?></li>
+        <li class="list-group-item list-group-item-action">Email: <?= $email ?></li>
+        <li class="list-group-item list-group-item-action">Idade: <?= $idade ?></li>
 
-      <li class="list-group-item list-group-item-action">Interesses usando <code>implode() </code> : <?= implode(", " , $interesses) ?></li>
+    <?php
+    if ( !empty($interesses)) { ?>
+        <li class="list-group-item list-group-item-action">Interesses usando <code>implode() </code> : <?= implode(", " , $interesses) ?></li>
 
-      <li class="list-group-item list-group-item-action">Interesses usando <code>foreach() </code> :
-        <ul>
-            <?php foreach ($interesses as $interesse ) {?>
-                <li><?=$interesse?></li>
-            <?php    
-            }
-            ?>
-        </ul>
-    
-      </li>
-      
-      <li class="list-group-item list-group-item-action">Mensagem: <?= $mensagem ?></li>
+        <li class="list-group-item list-group-item-action">Interesses usando <code>foreach() </code> :
+            <ul>
+                <?php foreach ($interesses as $interesse ) {?><li><?=$interesse?></li><?php } ?>
+            </ul>
+        </li>
+    <?php } ?>  
+        
+        <li class="list-group-item list-group-item-action">Mensagem: <?= $mensagem ?></li>
+        <li class="list-group-item list-group-item-action">Deseja receber informativos? <?= $informativos ?></li>
     </ul>
   </div>
  
